@@ -1,0 +1,118 @@
+
+.vp-helpful-wrapper {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.vp-helpfull-label {
+    min-width: 235px;
+    text-align: right;
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+}
+
+.vp-helpfull-buttons {
+
+    .vp-helpful-btn-feedback,
+    .vp-helpful-btn-text {
+        transition: all 0.25s ease-out;
+    }
+
+    // hide status text
+    .vp-helpful-btn-feedback {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        padding-left: 47px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    // disable interaction if already voted
+    &.voted {
+        pointer-events: none !important;
+
+        .vp-helpful-btn-text {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .vp-helpful-btn-feedback {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.vp-helpful-btn {
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333 !important;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    height: 36px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-out;
+
+    & > * {
+        user-select: none !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+
+    svg path {
+        transition: all 0.2s ease-out;
+    }
+
+    &[data-action="yes"]:hover,
+    &[data-action="yes"].active {
+        color: green !important;
+        border-color: green;
+
+        svg path {
+            fill: green;
+        }
+    }
+
+    &[data-action="no"]:hover,
+    &[data-action="no"].active {
+        color: red !important;
+        border-color: red;
+
+        svg path {
+            fill: red;
+        }
+    }
+
+    svg {
+        vertical-align: sub;
+        margin-right: 6px;
+    }
+}
+
+.vp-helpful-buttons-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
