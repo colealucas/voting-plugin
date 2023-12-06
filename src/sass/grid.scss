@@ -1,0 +1,27 @@
+.row,
+.row > div{
+	box-sizing: border-box;
+}
+
+.row {
+	display: flex;
+    gap: 20px;
+	box-sizing: border-box;
+}
+
+.col-md-4 {
+    width: 40%
+}
+.col-md-8 {
+    width: 60%
+}
+
+@media (max-width: 767px) {
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .row > div {
+        width: 100% !important;
+    }
+}

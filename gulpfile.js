@@ -41,8 +41,22 @@ const cssSourcePath = [
   './src/sass/article-voting-style.scss'
 ];
 
+// Admin sass
+const adminCssSourcePath = [
+  './src/sass/article-voting-admin-style.scss'
+];
+
 gulp.task('sass', async () => {
   return gulp.src(cssSourcePath)
+    .pipe(plumber())
+    .pipe(sass(options.sass))
+    .pipe(autoprefixer('last 2 versions'))
+    .pipe( rename( { suffix: '.min' } ) )
+    .pipe(gulp.dest('./assets/css/'));
+});
+
+gulp.task('admin-sass', async () => {
+  return gulp.src(adminCssSourcePath)
     .pipe(plumber())
     .pipe(sass(options.sass))
     .pipe(autoprefixer('last 2 versions'))
@@ -56,7 +70,8 @@ gulp.task( 'watch', async () => {
   // watch app files
   gulp.watch( [ './src/js/**/*.js', '!./assets/js/*.js' ], gulp.series( 'scripts' ) )
   gulp.watch( './src/sass/**/*.scss', gulp.series( 'sass' ) );
+  gulp.watch( './src/sass/**/*.scss', gulp.series( 'admin-sass' ) );
 
 });
 
-gulp.task('default', gulp.series('scripts', 'sass', 'watch'));
+gulp.task('default', gulp.series('scripts', 'sass', 'admin-sass', 'watch'));

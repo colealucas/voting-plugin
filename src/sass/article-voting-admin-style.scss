@@ -1,0 +1,41 @@
+@import 'grid';
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.article-voting-admin-wrapper {
+    padding: 20px 0;
+}
+
+.content-box {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: rgba(0,0,0, 0.08) 0 0 12px;
+
+    h1,h2,h3,h4,h5,h6 {
+        margin: 0 0 15px;
+    }
+}
+
+
+.av-heading {
+    margin: 0 0 15px;
+}
+
+h2.av-heading {
+    font-size: 1.3em;
+}
+
+h3.av-heading {
+    font-size: 1.2em;
+}
+
+.text-content {
+    ul {
+        list-style: disc;
+        margin-left: 15px;
+    }
+}

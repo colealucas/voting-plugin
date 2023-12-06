@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     debug('Helpfull article button missing data-action attribute!');
                 }
-            }
+            };
         });
     }
 });
