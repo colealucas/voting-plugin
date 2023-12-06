@@ -7,9 +7,9 @@
  * Author: Nicolae Lucas
  * Requires at least: 4.6
  * Requires PHP:      5.6
- * Text Domain:       article-voting-plugin
- * Domain Path:       /languages
  */
+
+ defined( 'ABSPATH' ) or die( 'access denied!' );
 
  // Keep track of plugin version
  define('PLUGIN_VERSION', '1.0.0');
