@@ -381,10 +381,12 @@
     }
 
     public function activate_plugin() {
-        // Activation tasks here
+        // flush rewrite rules
+        flush_rewrite_rules();
     }
 
     public function deactivate_plugin() {
-        // Deactivation tasks here
+        // flush rewrite rules
+        flush_rewrite_rules();
     }
 }
